@@ -1,0 +1,51 @@
+# generated: 2026-06-03T17:34:19.819982
+# last_updated: 2026-06-03T17:34:19.819982
+# project: react_user_dashboard
+# project_key: NOKEY
+# tracking_system: file-system
+# story_location: /workspaces/react_node_poc_bmad_framework/_bmad-output/implementation-artifacts
+
+# STATUS DEFINITIONS:
+# ==================
+# Epic Status:
+#   - backlog: Epic not yet started
+#   - in-progress: Epic actively being worked on
+#   - done: All stories in epic completed
+#
+# Epic Status Transitions:
+#   - backlog → in-progress: Automatically when first story is created (via create-story)
+#   - in-progress → done: Manually when all stories reach "done" status
+#
+# Story Status:
+#   - backlog: Story only exists in epic file
+#   - ready-for-dev: Story file created in stories folder
+#   - in-progress: Developer actively working on implementation
+#   - review: Ready for code review (via Dev's code-review workflow)
+#   - done: Story completed
+#
+# Retrospective Status:
+#   - optional: Can be completed but not required
+#   - done: Retrospective has been completed
+
+generated: 2026-06-03T17:34:19.819982
+last_updated: 2026-06-03T17:57:43.211153Z
+project: react_user_dashboard
+project_key: NOKEY
+tracking_system: file-system
+story_location: /workspaces/react_node_poc_bmad_framework/_bmad-output/implementation-artifacts
+
+development_status:
+  epic-1: in-progress
+  1-1-initialize-project-from-vite-react-typescript-starter: done
+  1-2-load-and-render-user-data: done
+  1-3-display-loading-error-empty-and-responsive-states: done
+  epic-1-retrospective: optional
+  epic-2: in-progress
+  2-1-filter-users-with-search: review
+  2-2-sort-users-by-name-or-city: review
+  2-3-paginate-the-user-list-clientside: review
+  epic-2-retrospective: optional
+  epic-3: in-progress
+  3-1-open-user-detail-modal-from-a-card: done
+  3-2-make-the-detail-modal-accessible-and-keyboardfriendly: done
+  epic-3-retrospective: optional

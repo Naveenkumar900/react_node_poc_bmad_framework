@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { paginateUsers, sortUsers, userMatchesSearch } from './App'
+import { paginateUsers, sortUsers, userMatchesSearch } from './App.helpers'
 import type { User } from './api/users'
 
 const sampleUser: User = {

@@ -95,6 +95,27 @@ describe('React User Dashboard', () => {
     await screen.findByText('Aaron Clark')
     expect(screen.queryByText('Loading users...')).toBeNull()
 
+    const userSection = screen.getByRole('region', { name: 'Users' })
+    const thumbnailButton = screen.getByRole('button', { name: 'Thumbnail' })
+    const listButton = screen.getByRole('button', { name: 'List' })
+
+    expect(thumbnailButton).toHaveAttribute('aria-pressed', 'true')
+    expect(listButton).toHaveAttribute('aria-pressed', 'false')
+    expect(userSection.className).toContain('user-grid')
+    expect(userSection.className).not.toContain('user-list')
+
+    await user.click(listButton)
+    expect(listButton).toHaveAttribute('aria-pressed', 'true')
+    expect(thumbnailButton).toHaveAttribute('aria-pressed', 'false')
+    expect(userSection.className).toContain('user-list')
+    expect(userSection.className).not.toContain('user-grid')
+
+    await user.click(thumbnailButton)
+    expect(thumbnailButton).toHaveAttribute('aria-pressed', 'true')
+    expect(listButton).toHaveAttribute('aria-pressed', 'false')
+    expect(userSection.className).toContain('user-grid')
+    expect(userSection.className).not.toContain('user-list')
+
     const sortButton = screen.getByRole('button', { name: /ascending/i })
     await user.click(sortButton)
     expect(sortButton).toHaveTextContent('Descending')

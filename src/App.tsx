@@ -12,6 +12,7 @@ export default function App() {
   const [query, setQuery] = useState('')
   const [sortField, setSortField] = useState<'name' | 'city'>('name')
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('asc')
+  const [viewMode, setViewMode] = useState<'thumbnail' | 'list'>('thumbnail')
   const [selectedUser, setSelectedUser] = useState<User | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
@@ -77,6 +78,24 @@ export default function App() {
             onFieldChange={setSortField}
             onDirectionToggle={() => setSortDirection((prev) => (prev === 'asc' ? 'desc' : 'asc'))}
           />
+          <div className="view-toggle" role="group" aria-label="View mode">
+            <button
+              type="button"
+              className={`view-toggle-button ${viewMode === 'thumbnail' ? 'primary active' : ''}`}
+              aria-pressed={viewMode === 'thumbnail'}
+              onClick={() => setViewMode('thumbnail')}
+            >
+              Thumbnail
+            </button>
+            <button
+              type="button"
+              className={`view-toggle-button ${viewMode === 'list' ? 'primary active' : ''}`}
+              aria-pressed={viewMode === 'list'}
+              onClick={() => setViewMode('list')}
+            >
+              List
+            </button>
+          </div>
         </div>
         {error && (
           <div className="error-banner" role="alert">
@@ -89,7 +108,7 @@ export default function App() {
           </p>
         ) : (
           <>
-            <section className="user-grid">
+            <section className={viewMode === 'list' ? 'user-list' : 'user-grid'} aria-label="Users">
               {sortedUsers.length === 0 ? (
                 <p className="empty-state">No users found.</p>
               ) : (
